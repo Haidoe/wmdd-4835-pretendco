@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Goblin+One&family=Merriweather&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Merriweather", serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.site-title,
+.article-title {
+  font-family: "Goblin One", serif;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media screen and (min-width: 600px) {
+  .visually-hidden {
+    clip: unset;
+    clip-path: unset;
+    height: unset;
+    overflow: unset;
+    position: unset;
+    white-space: unset;
+    width: unset;
+  }
+}
+
+header,
+footer {
+  padding: 1rem 2%;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0.95);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  border-bottom: 2px solid white;
+  z-index: 100;
+}
+
+.site-title {
+  color: #a8ccee;
+  font-size: 1.25rem;
+}
+
+header ul {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+header button {
+  background-color: inherit;
+  color: white;
+  outline: none;
+  border: 1px solid white;
+  padding: 0.3rem 0.5rem;
+}
+
+header button:hover {
+  background-color: #a8ccee;
+}
+
+nav {
+  position: relative;
+}
+
+nav .wrapper {
+  z-index: 90;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.75);
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  backdrop-filter: blur(5px);
+  padding: 1rem 2%;
+  transform: translateX(110%);
+  transition: 0.3s;
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  header button i,
+  header button i::before {
+    display: none;
+  }
+
+  nav .wrapper {
+    right: 0;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  nav .wrapper {
+    text-align: right;
+    right: 0;
+    width: 33.33%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  nav .wrapper {
+    right: 0;
+    width: 25%;
+  }
+}
+
+nav .wrapper.open {
+  transform: translateX(0);
+}
+
+nav .wrapper ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: white;
+}
+
+nav .wrapper ul li {
+  border-bottom: 1px solid white;
+  padding: 0.3rem 0;
+}
+
+nav .wrapper ul li:hover {
+  background-color: rgb(171, 208, 243, 0.5);
+}
+
+/* Main Content ===================== */
+
+main {
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.article-title {
+  display: grid;
+}
+
+.article-title > * {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.article-title h2 {
+  z-index: 5;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 2%;
+}
+
+article p {
+  padding: 1rem 2%;
+}
+
+.article-meta {
+  padding: 1rem 2%;
+  text-align: right;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.article-meta a:hover {
+  color: #a8ccee;
+}
+
+/* FOOTER =====================  */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid black;
+  gap: 1rem;
+}
+
+footer .site-title {
+  font-size: 2rem;
+}
+
+footer ul {
+  display: flex;
+  gap: 1rem;
+}
