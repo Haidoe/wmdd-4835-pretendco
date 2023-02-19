@@ -5,9 +5,10 @@
 }
 
 body {
-  font-family: "Merriweather", serif;
+  font-family: Merriweather, serif;
   line-height: 1.5;
   margin: 0;
+  min-width: 320px;
 }
 
 .site-title,
@@ -147,6 +148,11 @@ nav .wrapper {
     right: 0;
     width: 25%;
   }
+
+  /* Hide the last row of unbalanced articles */
+  article:nth-child(4n):nth-last-child(-n + 5) ~ article {
+    display: none;
+  }
 }
 
 nav .wrapper.open {
@@ -195,6 +201,11 @@ main {
   }
 }
 
+article {
+  display: flex;
+  flex-direction: column;
+}
+
 .article-title {
   display: grid;
 }
@@ -213,6 +224,7 @@ main {
 
 article p {
   padding: 1rem 2%;
+  flex-grow: 1;
 }
 
 .article-meta {
